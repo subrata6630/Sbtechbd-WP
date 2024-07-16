@@ -118,7 +118,11 @@ input, textarea {
     clear: both;
     display: block;
     width: 100%;
+
 }
+
+
+
 .fix {
     overflow: hidden;
 }
@@ -137,6 +141,11 @@ input, textarea {
 #main-header {
     padding: 10px 0;
 	background: #FAFAFA;
+    margin: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--wp--preset--color--black-opacity-15);
+    border-bottom-style: solid;
+
 }
 .sitename strong {
     text-transform: uppercase;
@@ -165,58 +174,10 @@ nav select {
     margin-top: -54px;
     margin-left: 226px;
 }
-.menu-top > li {
-    position: relative;
-    float: left;
-}
-.menu-top li a {
-    display: block;
-    padding: 10px 15px;
-}
-.menu-top > li a:hover,
-.menu-top > li a:focus {
-  color: black;
-}
 
-.menu-item-has-children {
-  position: relative;
-  display: inline-block;
-}
-.menu-item-has-children:hover ul,
-.menu-item-has-children:focus ul,
-.menu-item-has-children:focus-within ul {
-  left: 0px;
-}
-.menu-top ul {
-    list-style-type: none; 
-    margin: 0;
-    padding: 0;
-}
 
-.menu-top ul li {
-    float: left; /* Align menu items horizontally */
-}
 
-.menu-top ul li a {
-    display: block;
-    color: white; /* Text color */
-    text-align: center;
-    padding: 14px 16px; /* Spacing for menu items */
-    text-decoration: none; /* Remove underline from links */
-}
 
-.menu-top ul li a:hover {
-    background-color: #111; /* Background color on hover */
-    color: #fff; /* Text color on hover */
-}
-.menu-top li:hover ul {
-    left: 0px;
-}
-
-.menu-top ul li.current-menu-item a {
-    background-color: #4CAF50; /* Highlight current page */
-    color: white;
-}
 
 
 /* Content area css */
@@ -235,7 +196,7 @@ nav select {
 
 /* Article css */
 .main-bg {
-	background-color: #FAFAFA;
+	background-color: #ededed;
 }
 .main-post {
     margin: 20px 0;
@@ -259,7 +220,7 @@ nav select {
     word-wrap: break-word;
 }
 .read-more {
-    color: #3CB371;
+    color: #555555;
     font-weight: bolder;
     display: block;
     margin-top: 10px;
@@ -336,7 +297,7 @@ nav select {
 
 /* Widget css */
 .sidebar {
-    background: #FAFAFA;
+    background: #ededed;
     margin: 20px 0px;
     padding: 30px;
 }
@@ -420,10 +381,37 @@ nav select {
     background: #EDEDED;
 	margin-top: 20px;
 	color: #555555;
+    margin: 0px;
+    padding-top: 69px;
 }
 #footer a {
 	color: #555555;
 }
+
+#copyright{
+    padding-top: 69px;
+}
+
+
+/* Social Icon */
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px; /* Adjust spacing between icons */
+    font-size: 24px; /* Adjust icon size */
+    color: #333; /* Icon color */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
 
 /* social links share */
 .social_links {
@@ -451,6 +439,32 @@ nav select {
 .fan-gplus {
     background: #D24736;
 }
+
+/* back to top */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 999;
+}
+
+#back-to-top a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #555555; /* Adjust color as needed */
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#back-to-top a:hover {
+    color: #fff; /* Change color on hover */
+    background-color: #555555; /* Change background on hover */
+}
+
+
 
 /* Author page */
 .socialize li {
@@ -595,10 +609,10 @@ nav select {
 
 /* Resposive css */
 @media (max-width: 480px){
-    .sitename, .top-menu {
+    .sitename {
         display: block;
-        float: none;
         text-align: center;
+        padding-top: 18px;
     }
 	.nav_res {
 		display: block;

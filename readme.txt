@@ -74,13 +74,6 @@ Fontello comes with the following embedded set of icon fonts:
    Homepage:  http://fortawesome.github.com/Font-Awesome/
 
 
-## Entypo
-
-   Copyright (C) 2012 by Daniel Bruce
-
-   Author:    Daniel Bruce
-   License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://www.entypo.com
 
 
 ## Web Symbols
@@ -99,3 +92,20 @@ Fontello comes with the following embedded set of icon fonts:
    Author:    P.J. Onori
    License:   SIL (http://scripts.sil.org/OFL)
    Homepage:  http://somerandomdude.com/work/iconic/
+
+## Entypo
+
+   Copyright (C) 2012 by Daniel Bruce
+
+   Author:    Daniel Bruce
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://www.entypo.com
+
+## bootstrap
+
+Copyright (c) 2011-2023 Twitter, Inc
+
+Author:   Twitter, Inc
+License:  MIT License 
+Homepage: https://getbootstrap.com/
+

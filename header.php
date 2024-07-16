@@ -11,44 +11,55 @@
  */
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> <meta charset="<?php bloginfo('charset'); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+<?php wp_head(); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <?php wp_head(); ?>
-</head>
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <!-- Start Main Wrapper Here -->
     <a class="skip-link" href="#main-content"><?php esc_html_e('Skip to content', 'sbtechbd'); ?></a>
     <header id="main-header" class="row fix">
-        <div class="wrapper">
-            <div class="sitename">
-                <?php if (has_custom_logo()) : ?>
-                <div class="site-logo">
-                    <?php the_custom_logo(); ?>
+        <div class="wrapper container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="sitename">
+                        <?php if (has_custom_logo()) : ?>
+                        <div class="site-logo">
+                            <?php the_custom_logo(); ?>
+                        </div>
+                        <?php else : ?>
+                        <h1><a class="site-title" href="<?php echo esc_url(home_url('/')); ?>"
+                                rel="home"><?php bloginfo('name'); ?></a></h1>
+                        <p class="site-desc"><?php bloginfo('description'); ?></p>
+                        <?php endif; ?>
+                    </div>
                 </div>
-                <?php else : ?>
-                <h1><a class="site-title" href="<?php echo esc_url(home_url('/')); ?>"
-                        rel="home"><?php bloginfo('name'); ?></a></h1>
-                <p class="site-desc"><?php bloginfo('description'); ?></p>
-                <?php endif; ?>
-            </div>
-
-            <div class="wrapper">
-                <nav class="top-menu">
-                    <?php
-                    if (has_nav_menu('top-menu')) {
-                        wp_nav_menu(array(
-                            'theme_location' => 'top-menu',
-                            'menu_class' => 'menu-top'
-                        ));
-                    }
-                    ?>
-                </nav>
+                <div class="col-md-6">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="<?php esc_attr_e('Toggle navigation', 'sbtechbd'); ?>">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <?php
+                            if (has_nav_menu('top-menu')) {
+                                wp_nav_menu(array(
+                                    'theme_location' => 'top-menu',
+                                    'menu_class' => 'navbar-nav ml-auto',
+                                    'container' => false,
+                                    'walker' => new WP_Bootstrap_Navwalker(), // Custom walker class for Bootstrap
+                                ));
+                            }
+                            ?>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div> <!-- End wrapper -->
     </header> <!-- Header -->
